@@ -15,6 +15,7 @@
       @method('put')
       @csrf
       <div class="mb-3">
+        <input type="hidden" name="oldImage" value="{{ $post['image'] }}">
           <label for="title" class="form-label">Title</label>
           <input type="title" class="form-control @error('title') is-invalid @enderror" id="title" name="title" placeholder="Your Title Post" autofocus value="{{ old('title', $post['title']) }}">
           @error('title')
