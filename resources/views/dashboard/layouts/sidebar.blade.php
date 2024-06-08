@@ -24,10 +24,18 @@
               Products
             </a>
           </li>
+        </ul>
+
+        @can('admin')            
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
+          <span>Administrator</span>
+        </h6>
+
+        <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link text-secondary d-flex align-items-center gap-2" href="#">
+            <a class="nav-link text-secondary d-flex align-items-center {{ Request::is('dashboard/categories*') ? 'text-dark' : 'text-secondary' }} gap-2" href="/dashboard/categories">
               <svg class="bi"><use xlink:href="#people"/></svg>
-              Customers
+              Post Categories
             </a>
           </li>
           <li class="nav-item">
@@ -37,6 +45,7 @@
             </a>
           </li>
         </ul>
+        @endcan
 
         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
           <span>Latest Posts</span>
